@@ -1,9 +1,7 @@
-id=Pix3lify
-name=Pix3lify
-version=v2.5.2
-versionCode=252
-author=Joey Huab, Aidan Holland, Pika, JohnFawkes, Laster K
-description=Ports Pixel 3 exclusive features; Pixel Blue theme accent, Alarms, Notification sounds, Ringtones, UI audio; enables Pixel Wallpapers, enables Google Call Screening, enables Night Light (device dependent), Daydream VR support, adds Device Gestures to Settings, enables Camera2 API and EIS support (varies per device)
-support=https://forum.xda-developers.com/apps/magisk/module-pixel-2-experience-t3757137
+id=fliptoshhh
+name=Flip To Shhh Enabler
+version=v1.1
+versionCode=101
+author=GabrielHoward
+description=This module activates Flip To Shhh in any device with Android 9+
 minMagisk=17000
-donate=https://www.paypal.me/joeyhuab
