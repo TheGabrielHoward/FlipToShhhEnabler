@@ -1,6 +1,6 @@
-# CallScreeningEnabler
+# Flip To Shhh
 ## README.md
-### Copyright (C) 2018, J0S3Gabriel
+### Copyright (C) 2018, GabrielHoward
 
 
 
