@@ -30,14 +30,48 @@ AUTOMOUNT=true
 PROPFILE=true
 
 # Set to true if you need post-fs-data script
-POSTFSDATA=false
+POSTFSDATA=true
 
 # Set to true if you need late_start service script
-LATESTARTSERVICE=false
+LATESTARTSERVICE=true
+
+# Unity Variables
+# Uncomment and change 'MINAPI' and 'MAXAPI' to the minimum and maxium android version for your mod (note that magisk has it's own minimum api: 21 (lollipop))
+# Uncomment SEPOLICY if you have sepolicy patches in common/sepolicy.sh. Unity will take care of the rest
+# Uncomment DYNAMICOREO if you want libs installed to vendor for oreo and newer and system for anything older
+# Uncomment DYNAMICAPP if you want anything in $INSTALLER/system/app to be installed to the optimal app directory (/system/priv-app if it exists, /system/app otherwise)
+# Uncomment SYSOVERRIDE if you want the mod to always be installed to system (even on magisk)
+# Uncomment RAMDISK if you have ramdisk modifications. If you only want ramdisk patching as part of a conditional, just keep this commented out and set RAMDISK=true in that conditional.
+# Uncomment DEBUG if you want full debug logs (saved to SDCARD if in twrp, part of regular log if in magisk manager (user will need to save log after flashing)
+MINAPI=26
+#MAXAPI=25
+SEPOLICY=true
+#SYSOVERRIDE=true
+#DYNAMICOREO=true
+#DYNAMICAPP=true
+#RAMDISK=true
+DEBUG=true
 
 # Custom Variables for Install AND Uninstall - Keep everything within this function
 unity_custom() {
-  :
+  if [ -f $VEN/build.prop ]; then BUILDS="/system/build.prop $VEN/build.prop"; else BUILDS="/system/build.prop"; fi
+  PX1=$(grep -E "ro.vendor.product.device=sailfish|ro.vendor.product.name=sailfish|ro.product.device=sailfish|ro.product.model=Pixel|ro.product.name=sailfish" $BUILDS)
+  PX1XL=$(grep -E "ro.vendor.product.device=marlin|ro.vendor.product.name=marlin|ro.product.model=Pixel XL|ro.product.device=marlin|ro.product.name=marlin" $BUILDS)
+  PX2=$(grep -E "ro.vendor.product.device=walleye|ro.vendor.product.name=walleye|ro.product.model=Pixel 2|ro.product.name=walleye|ro.product.device=walleye" $BUILDS)
+  PX2XL=$(grep -E "ro.vendor.product.name=taimen|ro.vendor.product.device=taimen|ro.product.model=Pixel 2 XL|ro.product.name=taimen|ro.product.device=taimen" $BUILDS)
+  PX3=$(grep -E "ro.vendor.product.device=blueline|ro.vendor.product.name=blueline|ro.product.model=Pixel 3|ro.product.name=blueline|ro.product.device=blueline" $BUILDS)
+  PX3XL=$(grep -E "ro.vendor.product.device=crosshatch|ro.vendor.product.name=crosshatch|ro.product.model=Pixel 3 XL|ro.product.name=crosshatch|ro.product.device=crosshatch" $BUILDS)
+  N5X=$(grep -E "ro.product.device=bullhead|ro.product.name=bullhead" $BUILDS)
+  N6P=$(grep -E "ro.product.device=angler|ro.product.name=angler" $BUILDS)
+  OOS=$(grep -E "ro.product.manufacturer=OnePlus|ro.product.vendor.brand=OnePlus" $BUILDS)
+  MANUFACTURER=$(grep "ro.product.manufacturer" $BUILDS)
+  if [ "$MANUFACTURER" == "HTC" ]; then
+    BFOLDER="/system/customize/resource/"
+    BZIP="hTC_bootup.zip"
+  else
+    BFOLDER="/system/media/"
+    BZIP="bootanimation.zip"
+  fi
 }
 
 # Custom Functions for Install AND Uninstall - You can put them here
