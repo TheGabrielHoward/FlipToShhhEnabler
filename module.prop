@@ -1,0 +1,7 @@
+id=fliptoshhhenabler
+name=Flip To Shhh Enabler
+version=v1.1
+versionCode=110
+author=GabrielHoward
+description=This module activates Flip To Shhh in any device with Android 9+
+minMagisk=17000
