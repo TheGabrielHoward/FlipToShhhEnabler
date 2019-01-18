@@ -1,4 +1,3 @@
-if [ $API -ge 28 ]; then
     ui_print " "
     ui_print "   Enabling Google's Flip to Shhh..."
     ui_print " "
