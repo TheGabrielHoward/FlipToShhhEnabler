@@ -42,10 +42,10 @@ LATESTARTSERVICE=false
 print_modname() {
   ui_print " "
   ui_print "    *******************************************"
-  ui_print "    *<name>*"
+  ui_print "         Flip To Shhh Enabler            "
   ui_print "    *******************************************"
-  ui_print "    *<version>*"
-  ui_print "    *<author>*"
+  ui_print "               v1.1                 "
+  ui_print "          by GabrielHoward              "
   ui_print "    *******************************************"
   ui_print " "
 }
