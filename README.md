@@ -27,3 +27,11 @@ Add scripts to Digital Wellbeing application to enable "Flip To Shhh" to work in
 1. Remove any/all similar module(s).
 2. Install/upgrade from Magisk Manager.
 3. Reboot. 
+
+
+
+---
+### CREDITS
+
+@thehappydinoa for the code
+Topjohnwu for Magisk
