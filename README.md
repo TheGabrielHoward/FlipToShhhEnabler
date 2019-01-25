@@ -33,6 +33,5 @@ Add scripts to Digital Wellbeing application to enable "Flip To Shhh" to work in
 ---
 ### CREDITS
 
-@thehappydinoa for the code
-
-Topjohnwu for Magisk
+- @thehappydinoa for the code
+- @topjohnwu for Magisk
