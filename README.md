@@ -18,8 +18,8 @@ Add scripts to Digital Wellbeing application to enable "Flip To Shhh" to work in
 ---
 #### PRE-REQUISITES
 
-- Magisk 18.0
-- Android 9+
+- Magisk 17.+
+- Android Pie+
 - Latest Digital Wellbeing APK installed
 
 
